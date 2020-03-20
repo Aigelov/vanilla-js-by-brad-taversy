@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+  <title>My Contacts</title>
+  <style>body { font-family: 'Roboto'; }</style>
+</head>
+<body>
+  <div class="container">
+    <h3 class="center-align">
+      My Contacts!
+    </h3>
+
+    <input id="filterInput" placeholder="Search names...">
+    
+    <ul id="names" class="collection with-header">
+      <li class="collection-header"><h5>A</h5></li>
+      <li class="collection-item"><a href="javascript:void(0)">Abe</a></li>
+      <li class="collection-item"><a href="javascript:void(0)">Adam</a></li>
+      <li class="collection-item"><a href="javascript:void(0)">Alan</a></li>
+      <li class="collection-item"><a href="javascript:void(0)">Anna</a></li>
+
+      <li class="collection-header"><h5>B</h5></li>
+      <li class="collection-item"><a href="javascript:void(0)">Beth</a></li>
+      <li class="collection-item"><a href="javascript:void(0)">Bill</a></li>
+      <li class="collection-item"><a href="javascript:void(0)">Bob</a></li>
+      <li class="collection-item"><a href="javascript:void(0)">Brad</a></li>
+
+      <li class="collection-header"><h5>C</h5></li>
+      <li class="collection-item"><a href="javascript:void(0)">Carrie</a></li>
+      <li class="collection-item"><a href="javascript:void(0)">Cathy</a></li>
+      <li class="collection-item"><a href="javascript:void(0)">Courtney</a></li>
+    </ul>
+  </div>
+
+
+  <script>
+    // Get input element
+    const filterInput = document.querySelector('#filterInput');
+
+    const filterNames = (event) => {
+      const filterValue = document.querySelector('#filterInput').value.toUpperCase();
+
+      // Get names ul
+      const ul = document.querySelector('#names');
+
+      // Get li's from ul
+      const li = ul.querySelectorAll('li.collection-item');
+
+      // Loop through collection-item li's
+      for (let i = 0; i < li.length; i++) {
+        const a = li[i].getElementsByTagName('a')[0];
+
+        // If matched
+        if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+          li[i].style.display = '';
+        } else {
+          li[i].style.display = 'none';
+        }
+      }
+    };
+
+    // Add event listener
+    filterInput.addEventListener('keyup', filterNames);
+  </script>
+</body>
+</html>

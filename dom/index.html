@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>Item Lister</title>
+</head>
+<body>
+<header id="main-header" class="bg-success text-white p-1 mb-1">
+    <div class="container">
+        <h2 id="header-title">Item Lister <span style="display:none">123</span></h2>
+    </div>
+</header>
+<div class="container">
+    <div id="main" class="card card-body pt-1">
+        <h3 class="title">Add Items</h3>
+        <form class="form-inline mb-2">
+            <input type="text" class="form-control mr-2">
+            <select class="form-control mr-2">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <input type="submit" class="btn btn-dark" value="Submit">
+        </form>
+        <h4 class="title">Items</h4>
+        <ul id="items" class="list-group">
+            <li class="list-group-item">Item 1</li>
+            <li class="list-group-item">Item 2</li>
+        </ul>
+        <div id="output"></div>
+        <br />
+        <button
+            class="btn btn-dark btn-block"
+            id="button"
+        >
+            Click here
+        </button>
+        <br />
+        <div
+            style="width: 400px; height: 200px; background: #ccc"
+            id="box"
+        >
+            <h4 class="m-3">Hello</h4>
+        </div>
+    </div>
+</div>
+
+<script src="dom-1.js"></script>
+<script src="dom-2.js"></script>
+<script src="dom-3.js"></script>
+</body>
+</html>
